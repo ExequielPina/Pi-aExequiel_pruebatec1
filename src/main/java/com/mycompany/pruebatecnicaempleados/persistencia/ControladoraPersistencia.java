@@ -1,7 +1,10 @@
 package com.mycompany.pruebatecnicaempleados.persistencia;
 
 import com.mycompany.pruebatecnicaempleados.logica.Empleado;
+import com.mycompany.pruebatecnicaempleados.persistencia.exceptions.NonexistentEntityException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class ControladoraPersistencia {
@@ -14,5 +17,21 @@ public class ControladoraPersistencia {
 
     public List<Empleado> traerPlatillos(){
         return empleJpa.findEmpleadoEntities();
+    }
+
+    public void eliminarEmple(int idEliminar) throws NonexistentEntityException {
+        empleJpa.destroy(idEliminar); 
+    }
+
+    public Empleado buscarEmple(int idEdit) {
+        return empleJpa.findEmpleado(idEdit);
+    }
+
+    public void empleEdit(Empleado empleEdit)  {
+        try {
+            empleJpa.edit(empleEdit);
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

@@ -17,16 +17,18 @@ public class Empleado implements Serializable {
     private int               id;
     private String        nombre;
     private String      apellido;
+    private String         cargo;
     private Double       salario;
     private String fechaDeInicio;
 
     public Empleado() {
     }
 
-    public Empleado(int id, String nombre, String apellido, Double salario, String fechaDeInicio) {
-        this.id = id;
+    public Empleado(String nombre, String apellido, String cargo, Double salario, String fechaDeInicio) {
+        
         this.nombre = nombre;
         this.apellido = apellido;
+        this.cargo = cargo;
         this.salario = salario;
         this.fechaDeInicio = fechaDeInicio;
     }
@@ -55,6 +57,14 @@ public class Empleado implements Serializable {
         this.apellido = apellido;
     }
 
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+
     public Double getSalario() {
         return salario;
     }
@@ -71,13 +81,16 @@ public class Empleado implements Serializable {
         this.fechaDeInicio = fechaDeInicio;
     }
 
+    public void getFechaDeInicio(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     @Override
     public String toString() {
-        return "Empleado{" + "id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", salario=" + salario + ", fechaDeInicio=" + fechaDeInicio + '}';
+        return "Empleado{" + "id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", cargo=" + cargo + ", salario=" + salario + ", fechaDeInicio=" + fechaDeInicio + '}';
     }
     
-    
-      
+             
 }
 
 
