@@ -5,9 +5,6 @@ import com.mycompany.pruebatecnicaempleados.persistencia.exceptions.NonexistentE
 import java.util.List;
 
 
-
-
-
 public class Controladora {
     
     ControladoraPersistencia controlPersis = new ControladoraPersistencia();
@@ -31,7 +28,5 @@ public class Controladora {
 
     public void empleEdit(Empleado empleEdit) {
         controlPersis.empleEdit(empleEdit);
-    }
-    
-    
+    }        
 }
