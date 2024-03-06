@@ -15,7 +15,7 @@ public class Controladora {
     }
 
     public List<Empleado> mostrarEmpleados(){
-        return controlPersis.traerPlatillos();
+        return controlPersis.traerEmpleados();
     }
 
     public void eliminarEmple(int idEliminar) throws NonexistentEntityException {
@@ -28,5 +28,10 @@ public class Controladora {
 
     public void empleEdit(Empleado empleEdit) {
         controlPersis.empleEdit(empleEdit);
-    }        
+    }    
+
+    public List<Empleado> mostrarEmpleadosCargo(String cargo){
+        
+        return controlPersis.traerEmpleadosCargo(cargo);
+    }
 }
